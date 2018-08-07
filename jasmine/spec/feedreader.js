@@ -144,6 +144,12 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+         
+        // compare the two selections against each other
+        it('content changes', function(done) {
+            expect(initialContent).not.toBe(changedContent);
+            done();
+        });
 
     });
 }());
