@@ -32,6 +32,16 @@ $(function() {
          * and that the URL is not empty.
          */
 
+        // test to ensure URLs are defined
+        it('URLs are defined', function() {
+
+            // use forEach to through each element of the array
+            allFeeds.forEach(function(obj) {
+                expect(obj.hasOwnProperty('url')).toBe(true);
+                expect(obj.url).not.toBe(undefined);
+            });
+         });
+
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
