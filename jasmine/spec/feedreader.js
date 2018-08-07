@@ -120,6 +120,26 @@ $(function() {
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function() {
 
+        var feedContainer = document.querySelector('.feed')
+        var initialContent,
+            changedContent;
+
+        // checks and saves the first feed selection
+        beforeEach(function(done) {
+            loadFeed(0, function() {
+                initialContent = feedContainer.children[0].href;
+                done();
+            });
+        });
+
+        // checks and saves the second feed selection
+        beforeEach(function(done) {
+            loadFeed(1, function() {
+                changedContent = feedContainer.children[0].href;;
+                done();
+            });
+        });
+
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
