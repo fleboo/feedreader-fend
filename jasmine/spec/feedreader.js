@@ -42,11 +42,19 @@ $(function() {
             });
          });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+
+        // checks that names are defined     
+        it('Names are defined', function() {
+
+            allFeeds.forEach(function(obj) {
+                expect(obj.hasOwnProperty('name')).toBe(true);
+                expect(obj.name).not.toBe(undefined);
+            });
+         });
     });
 
 
